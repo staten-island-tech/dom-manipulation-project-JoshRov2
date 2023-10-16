@@ -1,22 +1,16 @@
 const DOMselectors = {
-    form: document.queryselector("#form"),
-    firstName: document.querySelector(".first-name"),
-
-
-
-
-    
-    //grab all the text input
-    //grab all the h2s
-//document.querySelectorAll("h2"),
+    form: document.querySelector("#form"),
+    name: document.querySelector(".name"),
+    address: document.querySelector(".address"),
+    age: document.querySelector(".age"),
+    email: document.querySelector(".email")
     }
-    
-   // DOMselectors.form.addEventListener("submit", function(event){
-    //event.preventDefault();
-   // console.log(DOMselectors.firstName.value);    
-    //DOMselectors.h2s.forEach(
-    //(el) => (el.textContent = DOMselectors.firstName.value)
-    //)
-    //})
+     DOMselectors.form.addEventListener("submit", function(event){
+    event.preventDefault();
+    console.log("Name: " + DOMselectors.name.value);
+    console.log("Address: " + DOMselectors.address.value);
+    console.log("Age: " + DOMselectors.age.value);
+    console.log("Email: " + DOMselectors.email.value);
+    });
 
     
