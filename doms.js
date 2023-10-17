@@ -1,3 +1,5 @@
+const formData = {};
+
 const DOMselectors = {
     form: document.querySelector("#form"),
     name: document.querySelector(".name"),
@@ -7,10 +9,16 @@ const DOMselectors = {
     }
      DOMselectors.form.addEventListener("submit", function(event){
     event.preventDefault();
-    console.log("Name: " + DOMselectors.name.value);
-    console.log("Address: " + DOMselectors.address.value);
-    console.log("Age: " + DOMselectors.age.value);
-    console.log("Email: " + DOMselectors.email.value);
+    
+    formData.name = DOMselectors.name.value;
+    formData.address = DOMselectors.address.value;
+    formData.age = DOMselectors.age.value;
+    formData.email = DOMselectors.email.value;
+
+    console.log("Name: " + formData.name);
+    console.log("Address: " + formData.address);
+    console.log("Age: " + formData.age);
+    console.log("Email: " + formData.email);
     });
 
     
