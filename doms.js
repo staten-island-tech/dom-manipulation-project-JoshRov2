@@ -19,6 +19,13 @@ const DOMselectors = {
     console.log("Address: " + formData.address);
     console.log("Age: " + formData.age);
     console.log("Email: " + formData.email);
+    function clearInputFields() {
+        DOMselectors.name.value = "";
+        DOMselectors.address.value = "";
+        DOMselectors.age.value = "";
+        DOMselectors.email.value = "";
+        clearInputFields();
+    };
     });
 
     
