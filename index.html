@@ -4,26 +4,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM Manipulation</title>
 </head>
-<body>
+<body>        
+    <h1>Enter your information in the fields below.</h1>
     <form action="" id="form">
+
         <label for="Name">Enter your full name:</label>
-        <input type="text" name="Name" class="name" placeholder="name" />
+        <input type="text" name="Name" id="name" placeholder="name" />
 
         <label for ="Address">Enter your address:</label>
-        <input type="text" name="Address" class = "address" placeholder="address" />
+        <input type="text" name="Address" id="address" placeholder="address" />
 
-        <label for ="Age">Enter your age.:</label>
-        <input type="number" name="Age" class = "age" placeholder="age" />
+        <label for ="Age">Enter your age:</label>
+        <input type="number" name="Age" id = "age" placeholder="age" />
 
         <label for ="Email">Enter your email:</label>
-        <input type="email" name="Email" class = "email" placeholder="email" />
+        <input type="email" name="Email" id = "email" placeholder="email" />
 
     
-        <input type="submit" value="Click to Submit" id="submit" />
-
-        <h2></h2>
+        <input type="submit" value="Click to Submit" id="submit" >
+        <input type="button" value="Clear your Inputs" id="clearinput" >
+        
     </form> 
-           
+    
+    <div id = "showdata"></div>
+
     <script src="doms.js"></script>
 </body>
 </html>

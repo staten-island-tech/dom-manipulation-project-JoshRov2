@@ -1,31 +1,74 @@
+const DOMselectors = {
+    form: document.getElementById("form"),
+    name: document.getElementById("name"),
+    address: document.getElementById("address"),
+    age: document.getElementById("age"),
+    email: document.getElementById("email"),
+    showdata: document.getElementById("showdata"),
+    clearinputbutton: document.getElementById("clearinput")
+    };
+
 const formData = {};
 
-const DOMselectors = {
-    form: document.querySelector("#form"),
-    name: document.querySelector(".name"),
-    address: document.querySelector(".address"),
-    age: document.querySelector(".age"),
-    email: document.querySelector(".email")
-    }
-     DOMselectors.form.addEventListener("submit", function(event){
-    event.preventDefault();
-    
+ 
+    function formobjects() {
     formData.name = DOMselectors.name.value;
     formData.address = DOMselectors.address.value;
     formData.age = DOMselectors.age.value;
     formData.email = DOMselectors.email.value;
 
-    console.log("Name: " + formData.name);
-    console.log("Address: " + formData.address);
-    console.log("Age: " + formData.age);
-    console.log("Email: " + formData.email);
-    function clearInputFields() {
+    adddata();
+    clearinputs();
+
+    }
+
+    function adddata() {
+        const showdata = document.createElement("div");
+        showdata.className = "data";
+
+        const inputentries = [
+            { label: "Name", value: formData.name },
+            { label: "Age", value: formData.age },
+            { label: "Address", value: formData.address },
+            { label: "Email", value: formData.email },
+        ];
+        
+        inputentries.forEach(entry => {
+            const entryElement = document.createElement("e")
+            entryElement.textContent = '${entry.label}: ${entry.value}';
+            showdata.appendChild(entryElement);
+        });
+    DOMselectors.showdata.appendChild(showdata);
+    }
+
+    function clearinputs() {
         DOMselectors.name.value = "";
-        DOMselectors.address.value = "";
         DOMselectors.age.value = "";
         DOMselectors.email.value = "";
-        clearInputFields();
-    };
+        DOMselectors.address.value = "";
+    }
+
+   DOMselectors.form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    formobjects();
+   });
+
+   DOMselectors.clearinputbutton.addEventListener("click", function() {
+    clearinputs();
+    deletedata();
+    loginconsole();
+   });
+
+   function deletedata() {
+    const showdata = document.querySelectorAll(".data")
+    showdata.forEach(datadisplay => {
+        DOMselectors.showdata.removeChild(datadisplay);
     });
+   }
+
+   function loginconsole() {
+    console.log("Inputs have been cleared.")
+   }
+
 
     
