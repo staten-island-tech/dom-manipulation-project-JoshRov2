@@ -34,8 +34,8 @@ const formData = {};
         ];
         
         inputentries.forEach(entry => {
-            const entryElement = document.createElement("e")
-            entryElement.textContent = '${entry.label}: ${entry.value}';
+            const entryElement = document.createElement("p")
+            entryElement.textContent = `${entry.label}: ${entry.value}`;
             showdata.appendChild(entryElement);
         });
     DOMselectors.showdata.appendChild(showdata);
