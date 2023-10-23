@@ -1,4 +1,4 @@
-const DOMselectors = {
+/* const DOMselectors = {
     form: document.getElementById("form"),
     name: document.getElementById("name"),
     address: document.getElementById("address"),
@@ -71,4 +71,58 @@ const formData = {};
    }
 
 
-    
+     */
+   const DOMSelectors = {
+    manufacturerInput: document.getElementById('manufacturer'),
+    modelInput: document.getElementById('model'),
+    imageInput: document.getElementById('image'),
+    submitButton: document.getElementById('submit'),
+    clearButton: document.getElementById('clear'),
+    flexCards: document.querySelector('.flex-cards'),
+};
+
+DOMSelectors.submitButton.addEventListener('click', () => {
+    const manufacturer = DOMSelectors.manufacturerInput.value;
+    const model = DOMSelectors.modelInput.value;
+    const imageUrl = DOMSelectors.imageInput.value;
+    if (manufacturer && model && imageUrl) {
+        createFlexCard(manufacturer, model, imageUrl);
+        clearInputFields();
+    }
+});
+
+DOMSelectors.clearButton.addEventListener('click', () => {
+    clearAllFlexCards();
+    clearInputFields();
+});
+
+function createFlexCard(manufacturer, model, imageUrl) {
+    const flexCard = document.createElement('div');
+    flexCard.classList.add('flex-card');
+    const image = document.createElement('img');
+    image.src = imageUrl;
+    const flexCardContent = document.createElement('div');
+    flexCardContent.classList.add('flex-card-content');
+    flexCardContent.innerHTML = `<p><strong>Manufacturer:</strong> ${manufacturer}</p>
+    <p><strong>Model:</strong> ${model}</p>`;
+    flexCard.appendChild(image);
+    flexCard.appendChild(flexCardContent);
+    DOMSelectors.flexCards.appendChild(flexCard);
+}
+
+function clearInputFields() {
+    DOMSelectors.manufacturerInput.value = '';
+    DOMSelectors.modelInput.value = '';
+    DOMSelectors.imageInput.value = '';
+}
+
+function clearAllFlexCards() {
+    DOMSelectors.flexCards.innerHTML = '';
+}
+
+ 
+
+ 
+
+ 
+
