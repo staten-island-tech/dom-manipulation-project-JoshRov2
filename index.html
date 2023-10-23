@@ -3,31 +3,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM Manipulation</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>        
-    <h1>Enter your information in the fields below.</h1>
-    <form action="" id="form">
+<body>       
+    <div class = "carscontainer">
+    <h1>Create your garage.</h1>
+    <div class = "inputform">
+        <label for="manufacturer">Manufacturer:</label>
+        <input type="text" id="manufacturer">
 
-        <label for="Name">Enter your full name:</label>
-        <input type="text" name="Name" id="name" placeholder="name" />
+        <label for ="model">Model:</label>
+        <input type="text" id="model">
 
-        <label for ="Address">Enter your address:</label>
-        <input type="text" name="Address" id="address" placeholder="address" />
+        <label for ="image">Image URL:</label>
+        <input type="text" id="image">
 
-        <label for ="Age">Enter your age:</label>
-        <input type="number" name="Age" id = "age" placeholder="age" />
-
-        <label for ="Email">Enter your email:</label>
-        <input type="email" name="Email" id = "email" placeholder="email" />
-
-    
-        <input type="submit" value="Click to Submit" id="submit" >
-        <input type="button" value="Clear your Inputs" id="clearinput" >
-        
-    </form> 
-    
-    <div id = "showdata"></div>
-    <div class="card"><div class="card-title"></div></div>
+        <button id="submit">Submit</button>
+        <button id="clear">Clear <Input></Input></button>
+        <!-- <input type="submit" value="Click to Submit" id="submit" >
+        <input type="button" value="Clear your Inputs" id="clearinput" > -->
+    </div>
+<div class="flex-cards"></div>
+    </div> 
     <script src="doms.js"></script>
 </body>
 </html>

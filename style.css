@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.carscontainer {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 20px;
+}
+
+.inputform {
+    display: inline-block;
+    text-align: left;
+}
+
+label, input {
+    margin-bottom: 10px;
+    display: block;
+}
+
+button {
+    margin-top: 10px;
+}
+
+.flex-cards {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.flex-card img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.flex-card-content {
+    padding: 10px;
+}
+
+.clear {
+    clear: both;
+}
+
+ 
+
+ 
