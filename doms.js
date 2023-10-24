@@ -103,8 +103,8 @@ function createFlexCard(manufacturer, model, imageUrl) {
     image.src = imageUrl;
     const flexCardContent = document.createElement('div');
     flexCardContent.classList.add('flex-card-content');
-    flexCardContent.innerHTML = `<p><strong>Manufacturer:</strong> ${manufacturer}</p>
-    <p><strong>Model:</strong> ${model}</p>`;
+    flexCardContent.innerHTML = `<p>Manufacturer: ${manufacturer}</p>
+    <p>Model:${model}</p>`;
     flexCard.appendChild(image);
     flexCard.appendChild(flexCardContent);
     DOMSelectors.flexCards.appendChild(flexCard);

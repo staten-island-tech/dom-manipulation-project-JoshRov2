@@ -2,11 +2,13 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     display: flex;
+    box-sizing: border-box;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
 }
+
 
 .carscontainer {
     background-color: white;
@@ -14,6 +16,17 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     text-align: center;
     padding: 20px;
+    flex-direction: row;
+    display: flex;
+    width: 80%;
+    height: 100%;
+    flex: 1;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+   /*  margin-left: 4vw;
+    margin-right: 4vw;
+    margin-bottom: 8vh; */
 }
 
 .inputform {
@@ -31,7 +44,7 @@ button {
 }
 
 .flex-cards {
-    display: inline-block;
+   /*  display: inline-block;
     width: 200px;
     height: 200px;
     margin-right: 20px;
@@ -39,7 +52,17 @@ button {
     background-color: #fff;
     border: 1px solid #ccc;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    text-align: center; */
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: row;
+    margin-top: auto;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 15px 10px 10px black;
+    
+    border: 5px solid black;
 }
 
 .flex-card img {
