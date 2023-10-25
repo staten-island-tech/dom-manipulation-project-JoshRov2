@@ -9,6 +9,7 @@ body {
     margin: 0;
 }
 
+  
 
 .carscontainer {
     background-color: white;
@@ -16,7 +17,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     text-align: center;
     padding: 20px;
-    flex-direction: row;
+    flex-direction: column;
     display: flex;
     width: 80%;
     height: 100%;
@@ -50,15 +51,17 @@ button {
     margin-right: 20px;
     margin-bottom: 20px;
     background-color: #fff;
-    border: 1px solid #ccc;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     text-align: center; */
     display: flex;
     height: 100%;
     width: 100%;
-    flex-direction: row;
+    flex-direction: column;
     margin-top: auto;
+    flex-wrap: wrap;
     align-items: center;
+    min-width: 30%;
+    border: 1px solid #ccc;
     justify-content: space-around;
     box-shadow: 15px 10px 10px black;
     
@@ -66,8 +69,8 @@ button {
 }
 
 .flex-card img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 60%;
+    max-height: 60%;
     object-fit: cover;
 }
 

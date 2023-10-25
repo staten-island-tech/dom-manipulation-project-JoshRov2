@@ -87,13 +87,13 @@ DOMSelectors.submitButton.addEventListener('click', () => {
     const imageUrl = DOMSelectors.imageInput.value;
     if (manufacturer && model && imageUrl) {
         createFlexCard(manufacturer, model, imageUrl);
-        clearInputFields();
+        clearInputs();
     }
 });
 
 DOMSelectors.clearButton.addEventListener('click', () => {
     clearAllFlexCards();
-    clearInputFields();
+    clearInputs();
 });
 
 function createFlexCard(manufacturer, model, imageUrl) {
@@ -110,7 +110,7 @@ function createFlexCard(manufacturer, model, imageUrl) {
     DOMSelectors.flexCards.appendChild(flexCard);
 }
 
-function clearInputFields() {
+function clearInputs() {
     DOMSelectors.manufacturerInput.value = '';
     DOMSelectors.modelInput.value = '';
     DOMSelectors.imageInput.value = '';
