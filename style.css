@@ -18,13 +18,19 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     text-align: center;
     padding: 20px;
-    width: 80%;
-    max-width: 1000px;
+    width: 90%;
+    max-width: 100%;
     margin-bottom: 20px;
 }
-
+.header {
+    font-size: 50px;
+}
 .inputform {
-    text-align: left;
+    display: flex;
+    align-items: center;    
+    font-size: 30px;
+    text-align: center;
+    justify-content: space-around;
 }
 
 .form-group {
@@ -59,12 +65,12 @@ button {
 }
 
 .html-card {
-    border: 1px solid #ccc;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border: 3px solid black;
+    box-shadow: 1 1 5px rgba(0, 0, 0, 0.1);
     text-align: center;
     padding: 10px;
     margin: 10px;
-    width: 200px;
+    width: 400px;
     max-width: 100%;
     background-color: #fff;
 }
