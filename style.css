@@ -2,41 +2,37 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     display: flex;
-    box-sizing: border-box;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     min-height: 100vh;
     margin: 0;
 }
 
-  
+/* .carscontainer {
+   
+} */
 
-.carscontainer {
+.header, .inputform{     
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     text-align: center;
     padding: 20px;
-    flex-direction: column;
-    display: flex;
     width: 80%;
-    height: 100%;
-    flex: 1;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    box-sizing: border-box;
-   /*  margin-left: 4vw;
-    margin-right: 4vw;
-    margin-bottom: 8vh; */
+    max-width: 1000px;
+    margin-bottom: 20px;
 }
 
 .inputform {
-    display: inline-block;
     text-align: left;
 }
 
-label, input {
+.form-group {
     margin-bottom: 10px;
+    display: block;
+}
+
+label, input {
     display: block;
 }
 
@@ -44,44 +40,45 @@ button {
     margin-top: 10px;
 }
 
-.flex-cards {
-   /*  display: inline-block;
-    width: 200px;
-    height: 200px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    text-align: center; */
-    display: flex;
-    height: 100%;
-    width: 100%;
-    flex-direction: column;
-    margin-top: auto;
-    flex-wrap: wrap;
-    align-items: center;
-    min-width: 30%;
-    border: 1px solid #ccc;
-    justify-content: space-around;
-    box-shadow: 15px 10px 10px black;
-    
-    border: 5px solid black;
-}
-
-.flex-card img {
-    max-width: 60%;
-    max-height: 60%;
-    object-fit: cover;
-}
-
-.flex-card-content {
-    padding: 10px;
-}
-
 .clear {
     clear: both;
 }
+.html-cards {
+    /* display: inline-block;
+    width: 200px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 10px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
+.html-card {
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    max-width: 100%;
+    background-color: #fff;
+}
+
+.html-cards img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.html-cards-content {
+    padding: 10px;
+    text-align: left;
+}
  
 
  

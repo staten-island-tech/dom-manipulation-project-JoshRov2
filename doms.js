@@ -1,128 +1,79 @@
-/* const DOMselectors = {
-    form: document.getElementById("form"),
-    name: document.getElementById("name"),
-    address: document.getElementById("address"),
-    age: document.getElementById("age"),
-    email: document.getElementById("email"),
-    showdata: document.getElementById("showdata"),
-    clearinputbutton: document.getElementById("clearinput")
-    };
-
-const formData = {};
-
- 
-    function formobjects() {
-    formData.name = DOMselectors.name.value;
-    formData.address = DOMselectors.address.value;
-    formData.age = DOMselectors.age.value;
-    formData.email = DOMselectors.email.value;
-
-    adddata();
-    clearinputs();
-
-    }
-
-    function adddata() {
-        const showdata = document.createElement("div");
-        showdata.className = "data";
-
-        const inputentries = [
-            { label: "Name", value: formData.name },
-            { label: "Age", value: formData.age },
-            { label: "Address", value: formData.address },
-            { label: "Email", value: formData.email },
-        ];
-        
-        inputentries.forEach(entry => {
-            const entryElement = document.createElement("p")
-            entryElement.textContent = `${entry.label}: ${entry.value}`;
-            showdata.appendChild(entryElement);
-        });
-    DOMselectors.showdata.appendChild(showdata);
-    }
-
-    function clearinputs() {
-        DOMselectors.name.value = "";
-        DOMselectors.age.value = "";
-        DOMselectors.email.value = "";
-        DOMselectors.address.value = "";
-    }
-
-   DOMselectors.form.addEventListener("submit", function(event) {
-    event.preventDefault();
-    formobjects();
-   });
-
-   DOMselectors.clearinputbutton.addEventListener("click", function() {
-    clearinputs();
-    deletedata();
-    loginconsole();
-   });
-
-   function deletedata() {
-    const showdata = document.querySelectorAll(".data")
-    showdata.forEach(datadisplay => {
-        DOMselectors.showdata.removeChild(datadisplay);
-    });
-   }
-
-   function loginconsole() {
-    console.log("Inputs have been cleared.")
-   }
-
-
-     */
-   const DOMSelectors = {
+const DOMSelectors = {
     manufacturerInput: document.getElementById('manufacturer'),
     modelInput: document.getElementById('model'),
     imageInput: document.getElementById('image'),
     submitButton: document.getElementById('submit'),
     clearButton: document.getElementById('clear'),
-    flexCards: document.querySelector('.flex-cards'),
+    htmlCards: document.querySelector('.html-cards'),
 };
 
-DOMSelectors.submitButton.addEventListener('click', () => {
+
+DOMSelectors.submitButton.addEventListener('click', (event) => {
+    event.preventDefault();
+
     const manufacturer = DOMSelectors.manufacturerInput.value;
     const model = DOMSelectors.modelInput.value;
     const imageUrl = DOMSelectors.imageInput.value;
+
     if (manufacturer && model && imageUrl) {
-        createFlexCard(manufacturer, model, imageUrl);
-        clearInputs();
+        createHtmlCard(manufacturer, model, imageUrl);
+        clearInputFields();
     }
 });
 
 DOMSelectors.clearButton.addEventListener('click', () => {
-    clearAllFlexCards();
-    clearInputs();
+/*     clearAllHtmlCards();
+ */    clearInputFields();
 });
 
-function createFlexCard(manufacturer, model, imageUrl) {
-    const flexCard = document.createElement('div');
-    flexCard.classList.add('flex-card');
+function createHtmlCard(manufacturer, model, imageUrl) {
+    const htmlCard = document.createElement('div');
+    htmlCard.classList.add('html-card');
+
     const image = document.createElement('img');
     image.src = imageUrl;
-    const flexCardContent = document.createElement('div');
-    flexCardContent.classList.add('flex-card-content');
-    flexCardContent.innerHTML = `<p>Manufacturer: ${manufacturer}</p>
-    <p>Model:${model}</p>`;
-    flexCard.appendChild(image);
-    flexCard.appendChild(flexCardContent);
-    DOMSelectors.flexCards.appendChild(flexCard);
+
+    const htmlCardContent = document.createElement('div');
+    htmlCardContent.classList.add('html-card-content');
+
+    const manufacturerInfo = `<p>Manufacturer: ${manufacturer}</p>`;
+    const modelInfo = `<p>Model: ${model}</p>`;
+
+    htmlCardContent.insertAdjacentHTML('beforeend', manufacturerInfo);
+    htmlCardContent.insertAdjacentHTML('beforeend', modelInfo);
+
+  /*   const manufacturerTitle = document.createElement('strong');
+    manufacturerTitle.textContent = 'Manufacturer:';
+    const manufacturerText = document.createElement('p');
+    manufacturerText.textContent = manufacturer; */
+
+    /* const modelTitle = document.createElement('strong');
+    modelTitle.textContent = 'Model:';
+    const modelText = document.createElement('p');
+    modelText.textContent = model;
+    htmlCardContent.innerHTML = `
+        <p><strong>Manufacturer:</strong> ${manufacturer}</p>
+        <p><strong>Model:</strong> ${model}</p>
+    `;
+    htmlCardContent.appendChild(manufacturerTitle);
+    htmlCardContent.appendChild(manufacturerText);
+    htmlCardContent.appendChild(modelTitle);
+    htmlCardContent.appendChild(modelText); */
+
+
+    htmlCard.appendChild(image);
+    htmlCard.appendChild(htmlCardContent);
+
+    DOMSelectors.htmlCards.appendChild(htmlCard);
 }
 
-function clearInputs() {
+function clearInputFields() {
     DOMSelectors.manufacturerInput.value = '';
     DOMSelectors.modelInput.value = '';
     DOMSelectors.imageInput.value = '';
 }
 
-function clearAllFlexCards() {
-    DOMSelectors.flexCards.innerHTML = '';
+/* function clearAllHtmlCards() {
+    DOMSelectors.htmlCards.innerHTML = '';
 }
-
- 
-
- 
-
- 
-
+ */
