@@ -22,8 +22,7 @@ DOMSelectors.submitButton.addEventListener('click', (event) => {
 });
 
 DOMSelectors.clearButton.addEventListener('click', () => {
-/*     clearAllHtmlCards();
- */    clearInputFields();
+    clearInputFields();
 });
 
 function createHtmlCard(manufacturer, model, imageUrl) {
@@ -37,18 +36,23 @@ function createHtmlCard(manufacturer, model, imageUrl) {
     htmlCardContent.classList.add('html-card-content');
 
     const manufacturerInfo = `<p>Manufacturer: ${manufacturer}</p>`;
-    const modelInfo = `<p>Model: ${model}</p>`;
-
-    htmlCardContent.insertAdjacentHTML('beforeend', `<button class=remove>Remove Car</button> ${manufacturerInfo}`);
+    const modelInfo = `<p>Model: ${model}</p>`;    
+    
+    htmlCardContent.insertAdjacentHTML('beforeend', manufacturerInfo);
     htmlCardContent.insertAdjacentHTML('beforeend', modelInfo);
     
-
+    const removeButton = document.createElement('button');
+    removeButton.classList.add('remove');
+    removeButton.textContent ='Remove Car';
+    removeButton.addEventListener('click', () => {
+        htmlCard.remove();
+    });
+    
     htmlCard.appendChild(image);
     htmlCard.appendChild(htmlCardContent);
+    htmlCard.appendChild(removeButton);
 
     DOMSelectors.htmlCards.appendChild(htmlCard);
-
-    
 }
 
 function clearInputFields() {
@@ -57,7 +61,3 @@ function clearInputFields() {
     DOMSelectors.imageInput.value = '';
 }
 
-/* function clearAllHtmlCards() {
-    DOMSelectors.htmlCards.innerHTML = '';
-}
- */
